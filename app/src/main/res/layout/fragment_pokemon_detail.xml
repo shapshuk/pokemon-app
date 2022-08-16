@@ -10,20 +10,31 @@
             type="com.example.pokemonapp.ui.PokemonViewModel" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/name"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@{viewModel.pokemon.name}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Blue Jeans Frog" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.pokemon.name}"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Blue Jeans Frog" />
+
+        </androidx.appcompat.widget.Toolbar>
 
         <View
             android:layout_width="match_parent"
@@ -32,7 +43,7 @@
             android:layout_marginEnd="8dp"
             android:background="?attr/dividerHorizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
         <TextView
             android:id="@+id/description"
@@ -42,7 +53,7 @@
             android:text="@{viewModel.pokemon.description}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
             tools:text="Bright red body, blue legs" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
