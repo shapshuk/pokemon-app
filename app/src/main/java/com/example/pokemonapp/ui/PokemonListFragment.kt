@@ -19,7 +19,6 @@ class PokemonListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentPokemonListBinding.inflate(inflater)
-        // TODO: call the view model method that calls the amphibians api
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = PokemonListAdapter(PokemonListener { pokemon ->

@@ -1,5 +1,6 @@
 package com.example.pokemonapp.network
 
+import com.example.pokemonapp.dataclasses.Pokemon
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -25,7 +26,8 @@ interface PokemonApiService {
     suspend fun getData() : List<Pokemon>
 }
 
-object PokemonApi {
+object PokemonApiObject {
+
     val retrofitService : PokemonApiService by lazy {
         retrofit.create(PokemonApiService::class.java)
     }

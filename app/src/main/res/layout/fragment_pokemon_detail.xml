@@ -32,7 +32,7 @@
                 android:text="@{viewModel.pokemon.name}"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:text="Blue Jeans Frog" />
+                tools:text="Bulbasaur" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -54,6 +54,8 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
-            tools:text="Bright red body, blue legs" />
+            tools:text="Bulbasaur (Japanese: フシギダネ Fushigidane) is a dual-type Grass/Poison Pokémon introduced in Generation I." />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+

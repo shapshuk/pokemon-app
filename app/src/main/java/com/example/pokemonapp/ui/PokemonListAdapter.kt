@@ -6,22 +6,23 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonapp.databinding.ListViewItemBinding
-import com.example.pokemonapp.network.Pokemon
+import com.example.pokemonapp.dataclasses.Pokemon
+import com.example.pokemonapp.dataclasses.PokemonResponse
 
 class PokemonListAdapter(private val clickListener: PokemonListener) :
     ListAdapter<Pokemon, PokemonListAdapter.PokemonViewHolder>(DiffCallback) {
 
     class PokemonViewHolder(var binding: ListViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(clickListener: PokemonListener, pokemon : Pokemon) {
+        fun bind(clickListener: PokemonListener, pokemon : PokemonResponse) {
             binding.pokemon = pokemon
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Pokemon>() {
-        override fun areItemsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<PokemonResponse>() {
+        override fun areItemsTheSame(oldItem: PokemonResponse, newItem: PokemonResponse): Boolean {
             return oldItem.name == newItem.name
         }
 

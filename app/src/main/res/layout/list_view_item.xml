@@ -5,7 +5,7 @@
     <data>
         <variable
             name="pokemon"
-            type="com.example.pokemonapp.network.Pokemon" />
+            type="com.example.pokemonapp.dataclasses.PokemonResponse" />
         <variable
             name="clickListener"
             type="com.example.pokemonapp.ui.PokemonListener" />

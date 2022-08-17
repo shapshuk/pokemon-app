@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.databinding.BindingAdapter
-import com.example.pokemonapp.network.Pokemon
+import com.example.pokemonapp.dataclasses.Pokemon
 import com.example.pokemonapp.ui.PokemonApiStatus
 import com.example.pokemonapp.ui.PokemonListAdapter
 
