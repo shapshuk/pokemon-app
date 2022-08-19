@@ -4,14 +4,20 @@ import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.databinding.BindingAdapter
-import com.example.pokemonapp.network.Pokemon
-import com.example.pokemonapp.ui.PokemonApiStatus
+import androidx.paging.PagingData
+import com.example.pokemonapp.repositories.PokemonListItem
+import com.example.pokemonapp.ui.list.PokemonApiStatus
 import com.example.pokemonapp.ui.PokemonListAdapter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
+import kotlin.coroutines.coroutineContext
 
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<Pokemon>?) {
-    val adapter = recyclerView.adapter as PokemonListAdapter
-    adapter.submitList(data)
+fun bindRecyclerView(recyclerView: RecyclerView, data: PagingData<PokemonListItem>) {
+//    val adapter = recyclerView.adapter as PokemonListAdapter
+//
+//    adapter.submitData(data)
 }
 
 @BindingAdapter("apiStatus")
