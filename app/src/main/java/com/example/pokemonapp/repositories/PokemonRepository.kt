@@ -1,7 +1,6 @@
 package com.example.pokemonapp.repositories
 
 import android.util.Log
-import androidx.constraintlayout.helper.widget.Flow
 import androidx.paging.*
 import com.squareup.moshi.Json
 import retrofit2.http.GET
@@ -9,8 +8,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 const val BASE_URL = "https://pokeapi.co/api/v2/"
-const val LIMIT = 20
-
+const val LIMIT = 50
 
 class PokemonRepository(private val pokemonApi : PokemonApi) {
     fun getPokemonList() = Pager(
@@ -19,20 +17,9 @@ class PokemonRepository(private val pokemonApi : PokemonApi) {
     ).flow
 
     suspend fun getSinglePokemon(pokemonName : String) : SinglePokemon {
-//        var result : SinglePokemon
-//
-//        val pokemonTypes : List<PokemonType> = listOf(PokemonType("some type"), PokemonType("some other type"))
-//        try {
-//            result = pokemonApi.getSinglePokemon(pokemonName)
-//        } catch (e : Exception) {
-//            result = SinglePokemon("name", pokemonTypes, 10, 10)
-//            error(e)
-//        }
-//        return result
         return pokemonApi.getSinglePokemon(pokemonName)
     }
 }
-
 
 class PokemonPagingSource(private val api : PokemonApi) : PagingSource<Int, PokemonListItem>() {
     override fun getRefreshKey(state: PagingState<Int, PokemonListItem>): Int? {
@@ -89,7 +76,7 @@ data class SinglePokemon(
     @field:Json(name = "types") val types : List<PokemonType>?,
     @field:Json(name = "weight") val weight : Int?,
     @field:Json(name = "height") val height : Int?,
-    @field:Json(name = "sprites") val sprites : Sprites?
+    @field:Json(name = "sprites") val sprites : Sprites?,
 )
 
 data class PokemonType(

@@ -43,17 +43,4 @@ class PokemonListFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-//        lifecycleScope.launch {
-//            viewModel.pokemons
-//
-//            val recyclerView =
-//            val adapter = recyclerView.adapter as PokemonListAdapter
-//            adapter.submitData(data)
-//        }
-    }
-
 }

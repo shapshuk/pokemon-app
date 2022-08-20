@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.Glide
 import com.example.pokemonapp.repositories.*
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -20,9 +21,8 @@ class DetailViewModel : ViewModel() {
         PokemonRepository(
             Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(
                 MoshiConverterFactory.create(
-            Moshi.Builder().add(KotlinJsonAdapterFactory()).build())).build().create(PokemonApi::class.java))
-
-
+            Moshi.Builder().add(KotlinJsonAdapterFactory()).build()))
+                .build().create(PokemonApi::class.java))
 
 
     private val _status = MutableLiveData<PokemonApiStatus>()
@@ -31,11 +31,10 @@ class DetailViewModel : ViewModel() {
     private val _pokemon = MutableLiveData<SinglePokemon>()
     val pokemon : LiveData<SinglePokemon> = _pokemon
 
-    fun onPokemonOpened(pokemonName : String) {
+    fun onPokemonOpened(pokemonName : String) : SinglePokemon?{
         viewModelScope.launch {
-            val singlePokemon = repository.getSinglePokemon(pokemonName)
-            _pokemon.value = singlePokemon
+            _pokemon.value = repository.getSinglePokemon(pokemonName)
         }
+        return _pokemon.value
     }
-
 }
