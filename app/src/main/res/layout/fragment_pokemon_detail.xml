@@ -31,7 +31,7 @@
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="Bulbasaur" />
-<!--            android:text="@{viewModel.pokemon.name}"-->
+            <!--            android:text="@{viewModel.pokemon.name}"-->
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -65,7 +65,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
             tools:text="Types" />
-<!--        android:text="@{viewModel.pokemon.types[0].type.name.toString()}"-->
+        <!--        android:text="@{viewModel.pokemon.types[0].type.name.toString()}"-->
 
         <TextView
             android:id="@+id/weight"
@@ -77,7 +77,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/types"
             tools:text="Weight" />
-<!--        android:text="@{Integer.toString(viewModel.pokemon.weight)}"-->
+        <!--        android:text="@{Integer.toString(viewModel.pokemon.weight)}"-->
 
         <TextView
             android:id="@+id/height"
@@ -89,10 +89,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight"
             tools:text="Height" />
-<!--        android:text="@{Integer.toString(viewModel.pokemon.height)}"-->
+        <!--        android:text="@{Integer.toString(viewModel.pokemon.height)}"-->
 
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
