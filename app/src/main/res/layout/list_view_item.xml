@@ -8,7 +8,7 @@
             type="com.example.pokemonapp.repositories.PokemonListItem" />
         <variable
             name="clickListener"
-            type="com.example.pokemonapp.ui.PokemonListener" />
+            type="com.example.pokemonapp.ui.list.PokemonListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

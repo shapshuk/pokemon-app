@@ -10,8 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.pokemonapp.R
 import com.example.pokemonapp.databinding.FragmentPokemonListBinding
+import com.example.pokemonapp.repositories.PokemonListItem
 import com.example.pokemonapp.ui.PokemonListAdapter
-import com.example.pokemonapp.ui.PokemonListener
 import kotlinx.coroutines.launch
 
 class PokemonListFragment : Fragment() {
