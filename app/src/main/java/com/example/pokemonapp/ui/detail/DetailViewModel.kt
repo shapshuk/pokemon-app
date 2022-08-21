@@ -13,8 +13,6 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-enum class PokemonApiStatus {LOADING, ERROR, DONE}
-
 class DetailViewModel : ViewModel() {
 
     private val repository : PokemonRepository =
@@ -23,10 +21,6 @@ class DetailViewModel : ViewModel() {
                 MoshiConverterFactory.create(
             Moshi.Builder().add(KotlinJsonAdapterFactory()).build()))
                 .build().create(PokemonApi::class.java))
-
-
-    private val _status = MutableLiveData<PokemonApiStatus>()
-    val status: LiveData<PokemonApiStatus> = _status
 
     private val _pokemon = MutableLiveData<SinglePokemon>()
     val pokemon : LiveData<SinglePokemon> = _pokemon

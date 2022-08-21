@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.pokemonapp.R
 import com.example.pokemonapp.databinding.FragmentPokemonListBinding
-import com.example.pokemonapp.repositories.PokemonListItem
-import com.example.pokemonapp.ui.PokemonListAdapter
 import kotlinx.coroutines.launch
 
 class PokemonListFragment : Fragment() {
@@ -36,8 +33,6 @@ class PokemonListFragment : Fragment() {
             viewModel.pokemons.collect {
                 adapter.submitData(it)
             }
-
-
         }
 
         // Inflate the layout for this fragment

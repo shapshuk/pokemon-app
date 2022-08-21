@@ -60,8 +60,6 @@ class PokemonDetailFragment : Fragment() {
             )
         })
 
-
-
         //inflate the layout for this fragment
         return binding.root
     }

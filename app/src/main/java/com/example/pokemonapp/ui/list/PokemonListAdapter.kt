@@ -1,15 +1,12 @@
-package com.example.pokemonapp.ui
+package com.example.pokemonapp.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonapp.databinding.ListViewItemBinding
-
 import com.example.pokemonapp.repositories.PokemonListItem
-import com.example.pokemonapp.ui.list.PokemonListener
 
 
 class PokemonListAdapter(private val clickListener: PokemonListener) :

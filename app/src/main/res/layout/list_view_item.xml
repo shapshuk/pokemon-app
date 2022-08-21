@@ -32,7 +32,7 @@
             android:text="@{pokemon.name}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Frog" />
+            tools:text="Pokemon" />
 
     </com.google.android.material.card.MaterialCardView>
 

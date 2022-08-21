@@ -9,7 +9,6 @@
             type="com.example.pokemonapp.ui.detail.DetailViewModel" />
     </data>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -31,7 +30,6 @@
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="Bulbasaur" />
-            <!--            android:text="@{viewModel.pokemon.name}"-->
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -48,9 +46,7 @@
             android:id="@+id/image"
             android:layout_width="300dp"
             android:layout_height="300dp"
-
             android:padding="8dp"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -60,39 +56,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
             tools:text="Types" />
-        <!--        android:text="@{viewModel.pokemon.types[0].type.name.toString()}"-->
 
         <TextView
             android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/types"
             tools:text="Weight" />
-        <!--        android:text="@{Integer.toString(viewModel.pokemon.weight)}"-->
 
         <TextView
             android:id="@+id/height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight"
             tools:text="Height" />
-        <!--        android:text="@{Integer.toString(viewModel.pokemon.height)}"-->
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
