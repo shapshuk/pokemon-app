@@ -9,8 +9,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.pokemonapp.databinding.FragmentPokemonListBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class PokemonListFragment : Fragment() {
 
     private val viewModel: ListViewModel by activityViewModels()
@@ -28,9 +30,9 @@ class PokemonListFragment : Fragment() {
             findNavController().navigate(direction)
         })
 
-        lifecycleScope.launch {
-            val adapter = binding.recyclerView.adapter as PokemonListAdapter
-            viewModel.pokemons.collect {
+        val adapter = binding.recyclerView.adapter as PokemonListAdapter
+        viewModel.pokemons.observe(viewLifecycleOwner) {
+            lifecycleScope.launch {
                 adapter.submitData(it)
             }
         }

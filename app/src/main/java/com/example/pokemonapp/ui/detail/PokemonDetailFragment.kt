@@ -7,19 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.pokemonapp.R
 import com.example.pokemonapp.databinding.FragmentPokemonDetailBinding
-import com.example.pokemonapp.repositories.PokemonListItem
-import com.example.pokemonapp.repositories.SinglePokemon
-import com.example.pokemonapp.ui.list.ListViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PokemonDetailFragment : Fragment() {
 
     private val viewModel: DetailViewModel by activityViewModels()
@@ -47,17 +42,15 @@ class PokemonDetailFragment : Fragment() {
                 Glide.with(root)
                     .load(pokemon.sprites?.front_default)
                     .into(binding.image)
+                name.text = pokemon.name?.capitalize()
+                height.text = "Height: ${pokemon.height?.div(0.1)?.toInt().toString()} cm"
+                weight.text = "Weight: ${pokemon.weight.toString()} kg"
+                types.text = pokemon.types?.joinToString(
+                    prefix = "Type: ",
+                    separator = ", ",
+                    transform = { it.type?.name.toString() }
+                )
             }
-
-            // setting up view elements
-            binding.name.text = pokemon.name?.capitalize()
-            binding.height.text = "Height: ${pokemon.height?.div(0.1)?.toInt().toString()} cm"
-            binding.weight.text = "Weight: ${pokemon.weight.toString()} kg"
-            binding.types.text = pokemon.types?.joinToString(
-                prefix = "Type: ",
-                separator = ", ",
-                transform = { it.type?.name.toString() }
-            )
         })
 
         //inflate the layout for this fragment

@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemonapp.databinding.ListViewItemBinding
 import com.example.pokemonapp.repositories.PokemonListItem
 
-
 class PokemonListAdapter(private val clickListener: PokemonListener) :
     PagingDataAdapter<PokemonListItem, PokemonListAdapter.PokemonViewHolder>(DiffCallback) {
 
