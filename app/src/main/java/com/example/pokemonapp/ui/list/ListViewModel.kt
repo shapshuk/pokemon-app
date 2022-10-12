@@ -6,6 +6,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import com.example.pokemonapp.domain.usecases.GetPokemonListUseCase
 import com.example.pokemonapp.repositories.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,8 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListViewModel @Inject constructor(
-    private val repository: PokemonRepository
-) : ViewModel( ) {
+    private val getPokemonListUseCase: GetPokemonListUseCase) : ViewModel( ) {
+
     lateinit var pokemons : LiveData<PagingData<PokemonListItem>>
 
     init {
@@ -24,7 +25,7 @@ class ListViewModel @Inject constructor(
 
     private fun getPokemonList() {
         viewModelScope.launch {
-            pokemons = repository.getPokemonList().cachedIn(viewModelScope).asLiveData()
+            pokemons = getPokemonListUseCase().cachedIn(viewModelScope)
         }
     }
 }

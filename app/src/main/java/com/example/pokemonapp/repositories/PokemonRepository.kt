@@ -14,6 +14,7 @@ interface PokemonRepository {
 }
 
 class PokemonRepositoryImpl @Inject constructor(private val pokemonApi : PokemonApi) : PokemonRepository {
+
     override fun getPokemonList() = Pager(
         pagingSourceFactory = {PokemonPagingSource(pokemonApi)},
         config = PagingConfig(pageSize = LIMIT)
