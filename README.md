@@ -1,6 +1,6 @@
 # Pokemon App
 
-Pokemon App is a simple Android app that is using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API. PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
+Pokemon App is a simple Android app that uses the [PokeAPI](https://pokeapi.co/) for constructing RESTful API. PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 Development tools:
 * Kotlin
